@@ -1,53 +1,53 @@
-
 name: Migrated CI
-
-on:
+'on':
   push:
     branches:
-      - main
-
+    - main
 jobs:
   cache:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Set env
-        run: |
-          echo "OBJECTS_DIRECTORY=obj" >> $GITHUB_ENV
-          echo "NUGET_PACKAGES_DIRECTORY=.nuget" >> $GITHUB_ENV
-          echo "SOURCE_CODE_PATH=*/*/" >> $GITHUB_ENV
+    - uses: actions/checkout@v4
+    - name: Set env
+      run: 'echo "OBJECTS_DIRECTORY=obj" >> $GITHUB_ENV
 
+        echo "NUGET_PACKAGES_DIRECTORY=.nuget" >> $GITHUB_ENV
+
+        echo "SOURCE_CODE_PATH=*/*/" >> $GITHUB_ENV'
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Set env
-        run: |
-          echo "OBJECTS_DIRECTORY=obj" >> $GITHUB_ENV
-          echo "NUGET_PACKAGES_DIRECTORY=.nuget" >> $GITHUB_ENV
-          echo "SOURCE_CODE_PATH=*/*/" >> $GITHUB_ENV
-      - name: dotnet build --no-restore
-        run: dotnet build --no-restore
+    - uses: actions/checkout@v4
+    - name: Set env
+      run: 'echo "OBJECTS_DIRECTORY=obj" >> $GITHUB_ENV
 
+        echo "NUGET_PACKAGES_DIRECTORY=.nuget" >> $GITHUB_ENV
+
+        echo "SOURCE_CODE_PATH=*/*/" >> $GITHUB_ENV'
+    - name: dotnet build --no-restore
+      run: dotnet build --no-restore
   tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Set env
-        run: |
-          echo "OBJECTS_DIRECTORY=obj" >> $GITHUB_ENV
-          echo "NUGET_PACKAGES_DIRECTORY=.nuget" >> $GITHUB_ENV
-          echo "SOURCE_CODE_PATH=*/*/" >> $GITHUB_ENV
-      - name: dotnet test --no-restore
-        run: dotnet test --no-restore
+    - uses: actions/checkout@v4
+    - name: Set env
+      run: 'echo "OBJECTS_DIRECTORY=obj" >> $GITHUB_ENV
 
+        echo "NUGET_PACKAGES_DIRECTORY=.nuget" >> $GITHUB_ENV
+
+        echo "SOURCE_CODE_PATH=*/*/" >> $GITHUB_ENV'
+    - name: dotnet test --no-restore
+      run: dotnet test --no-restore
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Set env
-        run: |
-          echo "OBJECTS_DIRECTORY=obj" >> $GITHUB_ENV
-          echo "NUGET_PACKAGES_DIRECTORY=.nuget" >> $GITHUB_ENV
-          echo "SOURCE_CODE_PATH=*/*/" >> $GITHUB_ENV
-           - name: Define deployment
+    - uses: actions/checkout@v4
+    - name: Set env
+      run: 'echo "OBJECTS_DIRECTORY=obj" >> $GITHUB_ENV
+
+        echo "NUGET_PACKAGES_DIRECTORY=.nuget" >> $GITHUB_ENV
+
+        echo "SOURCE_CODE_PATH=*/*/" >> $GITHUB_ENV'
+    - name: echo "Define your deployment script!"
+      run: echo "Define your deployment script!"
+
